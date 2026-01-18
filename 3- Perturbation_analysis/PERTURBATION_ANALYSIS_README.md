@@ -98,7 +98,7 @@ Hierarchical clustering (Ward linkage) on z-score normalized centroids groups pe
 
 #### Distance Distribution from Negative Control
 
-![Perturbation Distance Distribution](figures/perturbation_distance_distribution.png)
+![Perturbation Distance Distribution](../figures/perturbation_distance_distribution.png)
 
 **Figure 1**: Distribution of Euclidean (left) and Cosine (right) distances from the NC centroid. Red and orange lines indicate median and mean values, respectively.
 
@@ -222,7 +222,7 @@ Hierarchical clustering (Ward linkage) on z-score normalized centroids groups pe
 
 #### Program Shift Heatmap (Top 30 Perturbations)
 
-![Program Shift Heatmap](figures/program_shift_heatmap.png)
+![Program Shift Heatmap](../figures/program_shift_heatmap.png)
 
 **Figure 2**: Heatmap showing program proportion shifts (relative to NC) for the top 30 perturbations by total effect size. Red indicates increases, blue indicates decreases.
 
@@ -316,7 +316,7 @@ Hierarchical clustering (Ward linkage) on z-score normalized centroids groups pe
 
 #### Effect Category Distribution
 
-![Effect Category Distribution](figures/effect_category_distribution.png)
+![Effect Category Distribution](../figures/effect_category_distribution.png)
 
 **Figure 3**: Distribution of perturbations by their dominant program shift effect.
 
@@ -342,7 +342,7 @@ Hierarchical clustering (Ward linkage) on z-score normalized centroids groups pe
 
 #### Hierarchical Clustering Dendrogram
 
-![Perturbation Dendrogram](figures/perturbation_dendrogram.png)
+![Perturbation Dendrogram](../figures/perturbation_dendrogram.png)
 
 **Figure 4**: Hierarchical clustering of 122 perturbations by expression profile similarity (Ward linkage). Colors indicate cluster assignments (k=6).
 
@@ -366,7 +366,7 @@ Hierarchical clustering (Ward linkage) on z-score normalized centroids groups pe
 
 #### Cluster Characterization by Program Shifts
 
-![Cluster Program Shifts](figures/cluster_program_shifts.png)
+![Cluster Program Shifts](../figures/cluster_program_shifts.png)
 
 **Figure 5**: Mean program proportion shifts for each cluster relative to NC control.
 
@@ -410,7 +410,7 @@ Hierarchical clustering (Ward linkage) on z-score normalized centroids groups pe
 
 ### 4.4 Principal Component Analysis
 
-![Perturbation PCA](figures/perturbation_pca.png)
+![Perturbation PCA](../figures/perturbation_pca.png)
 
 **Figure 6**: Principal component analysis of perturbation centroids. Left panel colored by cluster assignment, right panel colored by Euclidean distance from NC (effect size).
 
@@ -539,7 +539,7 @@ This is a **striking and underappreciated finding**. Potential explanations:
 
 #### Expression Heatmap: Top Perturbations × Top Variable Genes
 
-![Perturbation Gene Heatmap](figures/perturbation_gene_heatmap.png)
+![Perturbation Gene Heatmap](../figures/perturbation_gene_heatmap.png)
 
 **Figure 7**: Heatmap showing expression shifts (from NC) for the top 25 perturbations across the 30 most variable genes. Red indicates upregulation, blue indicates downregulation.
 
@@ -836,7 +836,7 @@ Critically, the **checkpoint model** emerging from program proportion analysis s
 
 ---
 
-**Analysis Date**: January 15, 2026  
-**Analyst**: Senior Computational Biologist  
+**Analysis Date**: January 2026  
+**Analyst**: Haythem Mami  
 **Dataset**: obesity_challenge_1.h5ad (44,846 cells, 11,046 genes)  
 **Analysis Type**: Perturbation-seq profiling of adipogenesis
