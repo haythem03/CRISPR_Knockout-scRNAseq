@@ -18,7 +18,97 @@ Before training predictive machine learning models, this analysis establishes th
 
 The following diagram summarizes the four-stage pipeline implemented in this repository, moving from raw data to mechanistic insight and predictive features.
 
-<img width="2816" height="1124" alt="Gemini_Generated_Image_th6e54th6e54th6e" src="https://github.com/user-attachments/assets/d07c7e8d-4308-4b0e-a879-12e9ad3f0a79" />
+```mermaid
+graph TD
+    %% --- Sophisticated Bioinformatics Theme ---
+    %%{init: {
+        'theme': 'base',
+        'themeVariables': {
+            'primaryColor': '#ffffff',
+            'primaryBorderColor': '#2c3e50',
+            'primaryTextColor': '#2c3e50',
+            'lineColor': '#34495e',
+            'tertiaryColor': '#ecf0f1'
+        }
+    }}%%
+
+    %% --- Node Styling ---
+    classDef input fill:#2c3e50,stroke:#34495e,stroke-width:2px,color:#fff,rx:5,ry:5;
+    classDef step fill:#fff,stroke:#7f8c8d,stroke-width:1px,color:#2c3e50,rx:2,ry:2;
+    classDef highlight fill:#e8f8f5,stroke:#1abc9c,stroke-width:2px,color:#16a085;
+    classDef critical fill:#fef9e7,stroke:#f1c40f,stroke-width:2px,color:#d35400,stroke-dasharray: 5 5;
+    classDef output fill:#8e44ad,stroke:#8e44ad,stroke-width:2px,color:#fff,shape:rect;
+
+    %% ==========================================
+    %% TRACK 1: PRE-PROCESSING & SIGNAL (Top Row)
+    %% ==========================================
+    subgraph Track1 [<b>TRACK 1: Exploration & Signal Optimization</b>]
+        direction LR
+        
+        Input([🧬 Raw CROP-seq<br/>44k Cells / 11k Genes]):::input
+        
+        subgraph P1 [Phase 1: QC & State Mapping]
+            direction TB
+            QC(QC & Filtering<br/>MT% / Depth):::step
+            Norm(LogNorm &<br/>Scaling):::step
+            States(Cell State ID<br/>Pre-Adipo/Adipo/Lipo/Thermo):::highlight
+            
+            QC --> Norm --> States
+        end
+        
+        subgraph P2 [Phase 2: Signal Isolation]
+            direction TB
+            NC{NC Isolation<br/>8,705 Cells}:::critical
+            Batch(Batch Effect<br/>Correction):::step
+            HVG(Feature Selection<br/>Top 2,000 HVGs):::highlight
+            
+            NC --> Batch --> HVG
+        end
+
+        Input --> QC
+        States --> NC
+    end
+
+    %% ==========================================
+    %% TRACK 2: DYNAMICS & PREDICTION (Bottom Row)
+    %% ==========================================
+    subgraph Track2 [<b>TRACK 2: Perturbation Dynamics & Feature Engineering</b>]
+        direction LR
+        
+        subgraph P3 [Phase 3: Perturbation Profiling]
+            direction TB
+            Centroids(Compute KO<br/>Centroids):::step
+            Dist{Distance<br/>Metrics}:::critical
+            Cluster(Functional<br/>Clustering):::highlight
+            
+            Centroids --> Dist --> Cluster
+        end
+
+        subgraph P4 [Phase 4: Feature Engineering]
+            direction TB
+            Sig(Signature<br/>Enrichment):::step
+            Topo(Network<br/>Topology):::step
+            Transfer(k-NN<br/>Transfer):::highlight
+            
+            Sig & Topo --> Transfer
+        end
+
+        FinalOut[["🚀 Predictive Features<br/>(122 Train / 2,863 Test)"]]:::output
+        
+        Cluster --> Sig
+        Transfer --> FinalOut
+    end
+
+    %% ==========================================
+    %% CONNECTOR (Wrapping the Lines)
+    %% ==========================================
+    HVG -.->|Expression Matrix| Centroids
+
+    %% Link Styling
+    linkStyle default stroke:#34495e,stroke-width:1.5px,fill:none;
+
+
+```
 
 
 ---
@@ -300,4 +390,5 @@ For questions or collaboration inquiries, please open an issue or contact via Gi
 ---
 
 **⭐ If you find this analysis useful, please consider starring the repository!**
+
 
