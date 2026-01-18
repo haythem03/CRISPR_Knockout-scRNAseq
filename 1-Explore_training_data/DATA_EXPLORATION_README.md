@@ -1,7 +1,7 @@
 # Data Exploration Report: Obesity Challenge scRNA-seq Dataset
 
 **Date:** January 15, 2026  
-**Analyst:** Senior Bioinformatician  
+**Analyst:** Haythem Mami 
 **Dataset:** `obesity_challenge_1.h5ad`
 
 ## 1. Executive Summary
